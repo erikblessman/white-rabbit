@@ -1,8 +1,7 @@
 import { BottomNavigation, BottomNavigationAction, Paper } from "@mui/material";
 import React from "react";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ArchiveIcon from "@mui/icons-material/Archive";
-import RestoreIcon from "@mui/icons-material/Restore";
+import Add from "@mui/icons-material/Add";
+import ListAlt from "@mui/icons-material/ListAlt";
 
 export default function Navbar() {
     const [value, setValue] = React.useState(0);
@@ -15,9 +14,8 @@ export default function Navbar() {
                     setValue(newValue);
                 }}
             >
-                <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-                <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-                <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
+                <BottomNavigationAction label="Add" icon={<Add />} />
+                <BottomNavigationAction label="List" icon={<ListAlt />} />
             </BottomNavigation>
         </Paper>
     );

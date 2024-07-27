@@ -1,30 +1,28 @@
-import "./App.css";
+// #region Import Externals
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// #endregion
+// #region Import Internals
+import "./App.css";
 import DarkThemeProvider from "./core/DarkThemeProvider";
 import Navbar from "./core/Navbar";
+import Root from "./routes/root";
+// #endregion
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Root />,
+    },
+]);
 
-function App() {
+const App = (): JSX.Element => {
     return (
         <DarkThemeProvider>
-            <Stack spacing={2} direction="column" m={2}>
-                <Button variant="contained">Default</Button>
-                <Button variant="contained" color="primary">
-                    Primary
-                </Button>
-                <Button variant="contained" color="secondary">
-                    Secondary
-                </Button>
-                <Button variant="contained" disabled>
-                    Disabled
-                </Button>
-                <Button variant="contained" color="primary" href="#contained-buttons">
-                    Link
-                </Button>
-            </Stack>
+            <RouterProvider router={router} />
             <Navbar />
         </DarkThemeProvider>
     );
-}
+};
 
 export default App;
