@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import DarkThemeProvider from "./core/DarkThemeProvider";
 import Navbar from "./core/Navbar";
-import Root from "./routes/root";
+import Root from "./routes/Root";
 // #endregion
 const router = createBrowserRouter([
     {
